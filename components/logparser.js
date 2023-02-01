@@ -45,29 +45,26 @@ const Logparser = () => {
 
               // Clean up and remove the link
               link.parentNode.removeChild(link);
-              setFile('')
+              setFile("");
               setisLoading(false);
             });
           } else {
             res.json().then((data) => {
-              setFile('')
+              setFile("");
               alert(data.msg);
               setisLoading(false);
-              
             });
           }
         })
         .catch((err) => {
-          setFile('')
+          setFile("");
           alert(err);
           setisLoading(false);
-          
         });
     } catch (err) {
-      setFile('')
+      setFile("");
       alert(err);
       setisLoading(false);
-      
     }
   };
   return (
@@ -75,18 +72,6 @@ const Logparser = () => {
       <div>
         <span className="text-[40px] ml-6">Logparser</span>
       </div>
-
-      {/* <input
-        type={"file"}
-        onChange={(e) => {
-          // console.log("e.target.files[0]", e.target.files[0]);
-          setFile(e.target.files[0]);
-        }}
-      />
-
-      <button className="bg-red-400" onClick={onUpload}>
-        Upload
-      </button> */}
 
       <div className="ml-4 my-4">
         <label
